@@ -12,7 +12,7 @@ var perpage = 20;
 var artists = function(page, artist, details, callback) {
   db.all("SELECT Artist.ArtistId, Name, StarsNo " +
     "FROM Artist, Stars WHERE Artist.ArtistId = Stars.ArtistId " +
-    "ORDER BY Name LIMIT 20 OFFSET ($page - 1) * 20",
+    "ORDER BY Name LIMIT 20 OFFSET ($page - 1) *20",
     {$page: page}, function(error, rows) {
       if (error) {
         console.log(error);
